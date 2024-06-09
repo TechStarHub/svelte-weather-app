@@ -1,13 +1,14 @@
 <script>
 	import './../app.css';
+	import Header from '$lib/components/CurrentWeather/Header/Header.svelte';
 </script>
 
-<div class="app">
-	<header>
-		Head
-	</header>
+<div class="app relative">
+	<div class="fixed w-full top-0 left-0 z-20">
+		<Header />
+	</div>
 
-	<main>
+	<main class="w-full h-screen mt-20">
 		<slot />
 	</main>
 
