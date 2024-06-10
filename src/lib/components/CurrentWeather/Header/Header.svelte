@@ -11,16 +11,11 @@
         </div>
         <div class="">
             <div class="flex gap-0 items-center border rounded">
-                <input type="text" class="hidden md:block px-2 py-1 rounded md:w-[200px] lg:w-[400px] outline-none" placeholder="Search for a city" />
+                <input type="text" class="hidden md:block px-2 py-1 md:w-[200px] lg:w-[400px] outline-none" placeholder="Search for a city" />
                 <button class="hidden md:block px-2 py-1 bg-blue-500 text-white rounded-r ">
                     <Icon icon="tabler:search" class="h-6" />
                 </button>
             </div>
-        </div>
-        <div class="flex items
-        -center">
-            <a href="/" class="text-lg font-medium">Home</a>
-            <a href="/about" class="text-lg font-medium ml-4">About</a>
         </div>
     </div>
 </header>
