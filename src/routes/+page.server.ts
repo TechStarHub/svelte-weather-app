@@ -4,12 +4,13 @@ import { API_KEY } from "$env/static/private";
 export async function load({ params, cookies }) {
     // const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=London&aqi=no`);
     // const data = await res.json();
-    const lat = cookies.get("lat");
-    const lon = cookies.get("lon");
+    let lat = cookies.get("lat");
+    let lon = cookies.get("lon");
 
     if(!lat && !lon && lat?.trim() === "" && lon?.trim() === "" && lat!==undefined && lon!==undefined) {
         console.log("No lat and lon");
-        return { props: { data: null } };
+        lat = "51.52";
+        lon = "-0.11";
     }
 
     const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}&aqi=no`);
