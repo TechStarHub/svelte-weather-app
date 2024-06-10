@@ -7,7 +7,7 @@ export async function load({ params, cookies }) {
     let lat = cookies.get("lat");
     let lon = cookies.get("lon");
 
-    if(!lat && !lon && lat?.trim() === "" && lon?.trim() === "" && lat!==undefined && lon!==undefined) {
+    if(lat === undefined || lon === undefined || lat === "" || lon === "" || lat === "undefined" || lon === "undefined" || lat === null || lon === null) {
         console.log("No lat and lon");
         lat = "51.52";
         lon = "-0.11";
