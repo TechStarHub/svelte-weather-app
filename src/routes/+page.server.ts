@@ -7,6 +7,11 @@ export async function load({ params, cookies }) {
     const lat = cookies.get("lat");
     const lon = cookies.get("lon");
 
+    if(!lat && !lon && lat?.trim() === "" && lon?.trim() === "") {
+        console.log("No lat and lon");
+        return { props: { data: null } };
+    }
+
     const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}&aqi=no`);
     const data = await res.json();
 
