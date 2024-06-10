@@ -1,5 +1,6 @@
 <script>
     import Switch from "./Utils/Switch.svelte";
+    import {checkErrorInWeatherData} from '$lib/utils'
     export let data;
     let isCelsius = true;
 
@@ -9,13 +10,14 @@
 
     $: {
         console.log(isCelsius);
+        console.log(data);
     }
 
 </script>
 
 <div class="bg-gray-300/40 backdrop-blur min-h-[200px] w-[270px] sm:w-[400px] md:w-[500px] lg:w-[600px] max-w-[650px] p-6 rounded-xl shadow-lg mt-8 text-slate-900">
     <div class="flex flex-col gap-2 w-full h-full items-center">
-        {#if data === null || data === undefined}
+        {#if checkErrorInWeatherData(data)}
             <p class="">
                 Error fetching data
             </p>

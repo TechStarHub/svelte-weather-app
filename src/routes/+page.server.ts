@@ -7,7 +7,7 @@ export async function load({ params, cookies }) {
     const lat = cookies.get("lat");
     const lon = cookies.get("lon");
 
-    if(!lat && !lon && lat?.trim() === "" && lon?.trim() === "") {
+    if(!lat && !lon && lat?.trim() === "" && lon?.trim() === "" && lat!==undefined && lon!==undefined) {
         console.log("No lat and lon");
         return { props: { data: null } };
     }
